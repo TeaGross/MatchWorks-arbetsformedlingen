@@ -1,5 +1,7 @@
+import { SearchForm } from "../components/SearchForm"
+
 export const HomePage = () => {
     return <>
-    Home
+    <SearchForm />
     </>
 }
