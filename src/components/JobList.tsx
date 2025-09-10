@@ -4,7 +4,7 @@ import type { Job } from "../models/Jobs";
 import { Link } from "react-router-dom";
 
 export const JobList = () => {
-    const [jobs, setJobs] = useState<Job[]>([]); // Jobs måste ha array som startvärde
+    const [jobs, setJobs] = useState<Job[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -25,17 +25,14 @@ export const JobList = () => {
         getData();
     }, []);
 
-    // Visar laddningsindikator
     if (loading) {
-        return <div>Laddar…</div>; // simple loading text
+        return <div>Laddar…</div>;
     }
 
-    // Vid error
     if (error) {
         return <div style={{ color: "crimson" }}>{error}</div>;
     }
 
-    // Ifall inga jobb finns
     if (jobs.length === 0) {
         return <div>Inga jobb hittades.</div>;
     }
@@ -45,7 +42,9 @@ export const JobList = () => {
             {jobs?.map((job) => (
                 <div key={job.id}>
                     <h3>
-                        <Link to={`/job/${job.id}`}>{job.headline}</Link>
+                        <Link to={`/job/${job.id}`} state={{ job }}>
+                            {job.headline}
+                        </Link>
                     </h3>
                     <p>{job.employer?.name}</p>
                     <p>{job.workplace_address?.municipality}</p>
