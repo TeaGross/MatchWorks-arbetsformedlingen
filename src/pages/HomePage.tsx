@@ -1,9 +1,11 @@
-import { JobList } from "../components/JobList"
-import { SearchForm } from "../components/SearchForm"
+// import { JobList } from "../components/JobList"
+
+import { JobPage } from "../components/JobPage"
+
 
 export const HomePage = () => {
     return <>
-    <SearchForm />
-      <JobList/>
+ <JobPage />
+      {/* <JobList/> */}
   </>
 }
