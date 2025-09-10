@@ -3,7 +3,20 @@
 
 
 :root {
+.sc-digi-form-input-h .digi-form-input--medium.sc-digi-form-input {
+    --HEIGHT: var(--digi--form-input--height--small);
+}
+.sc-digi-form-input-h .digi-form-input.sc-digi-form-input {
+    max-width:400px;
+    
+    margin-left: 1rem;
+}
 
+.sc-digi-button-h .digi-button.sc-digi-button {
+    
+    background: #1927f0;
+    
+}
     
 }
 
