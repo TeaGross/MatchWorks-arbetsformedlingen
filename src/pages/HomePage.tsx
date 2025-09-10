@@ -1,11 +1,9 @@
-// import { JobList } from "../components/JobList"
-
-import { JobPage } from "../components/JobPage"
-
+import { JobList } from '../components/JobList';
 
 export const HomePage = () => {
-    return <>
- <JobPage />
-      {/* <JobList/> */}
-  </>
-}
+  return (
+    <>
+      <JobList />
+    </>
+  );
+};
