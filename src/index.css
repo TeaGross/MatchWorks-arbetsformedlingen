@@ -17,8 +17,13 @@
     background: #1927f0;
     
 }
-    
+
+.sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {
+    --BACKGROUND: #1f2f49;
 }
+}
+    
+
 
 body{
   margin: 0;
