@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getJobs } from "../services/JobService";
-import type { Job } from "../models/Jobs";
 import { Link } from "react-router-dom";
+import { JobContext } from "../context/Jobcontext";
 
 export const JobList = () => {
-    const [jobs, setJobs] = useState<Job[]>([]);
+    const {jobs, setJobs} = useContext(JobContext);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
