@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getJobs } from "../services/JobService";
 import type { Job } from "../models/Jobs";
+import { Link } from "react-router-dom";
 
 export const JobList = () => {
     const [jobs, setJobs] = useState<Job[]>([]); // Jobs måste ha array som startvärde
@@ -43,7 +44,9 @@ export const JobList = () => {
         <div>
             {jobs?.map((job) => (
                 <div key={job.id}>
-                    <h3>{job.headline}</h3>
+                    <h3>
+                        <Link to={`/job/${job.id}`}>{job.headline}</Link>
+                    </h3>
                     <p>{job.employer?.name}</p>
                     <p>{job.workplace_address?.municipality}</p>
                 </div>
