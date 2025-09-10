@@ -26,7 +26,18 @@
     .sc-digi-icon-bars-h svg{
       display: none; /* Gömmer hamburgermeny*/
     }
+    
+    /*JOBLIST */
+    .ad-container{
+      padding: 10px;
+      font-weight: 900;
+      --FONT-WEIGHT--HEADING-3: 
+    }
 
+    .ad-header a{
+      color: #dd387f;
+      
+    }
 
 
 

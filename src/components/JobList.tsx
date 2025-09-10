@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { getJobs } from "../services/JobService";
 import type { Job } from "../models/Jobs";
 import { Link } from "react-router-dom";
+import { DigiLayoutBlock, DigiLayoutContainer, DigiTypography } from "@digi/arbetsformedlingen-react";
+import { LayoutBlockVariation, TypographyVariation } from "@digi/arbetsformedlingen";
 
 export const JobList = () => {
     const [jobs, setJobs] = useState<Job[]>([]);
@@ -38,18 +40,24 @@ export const JobList = () => {
     }
 
     return (
-        <div>
-            {jobs?.map((job) => (
-                <div key={job.id}>
-                    <h3>
-                        <Link to={`/job/${job.id}`} state={{ job }}>
-                            {job.headline}
-                        </Link>
-                    </h3>
-                    <p>{job.employer?.name}</p>
-                    <p>{job.workplace_address?.municipality}</p>
-                </div>
-            ))}
-        </div>
+        <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
+            <DigiTypography afVariation={TypographyVariation.SMALL}>
+                {jobs?.map((job) => (
+                    <DigiLayoutContainer 
+                    af-vertical-padding={15}
+                    >  
+                    <div key={job.id} className="ad-container">
+                        <h3 className="ad-header">
+                            <Link to={`/job/${job.id}`} state={{ job }}>
+                                {job.headline}
+                            </Link>
+                        </h3>
+                        <p>{job.employer?.name}</p>
+                        <p>{job.workplace_address?.municipality}</p>
+                    </div>
+                    </DigiLayoutContainer>
+                ))}
+            </DigiTypography>
+        </DigiLayoutBlock>
     );
 };
