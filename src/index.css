@@ -12,10 +12,40 @@
     margin-left: 1rem;
 }
 
+
 .sc-digi-button-h .digi-button.sc-digi-button {
     
     background: #1927f0;
     
+
+  /*HEADER */
+    .sc-digi-logo svg{
+      display: none;
+    }
+
+    .sc-digi-logo{
+      display: none; /*Gömmer loggan */
+      --digi--logo--system-name-color--primary: var(--digi--indigo-500)
+    }
+
+    .digi-logo__system-name{
+      --digi--logo--font-size--system: var(--digi--typography--heading-1--font-size--desktop);
+    }
+
+    .sc-digi-logo-h{
+      --digi--logo--color--border--primary: none; /*Gömmer border till loggan */
+
+    }
+
+    .sc-digi-icon-bars-h svg{
+      display: none; /* Gömmer hamburgermeny*/
+    }
+
+
+
+
+
+
 }
 
 .sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {

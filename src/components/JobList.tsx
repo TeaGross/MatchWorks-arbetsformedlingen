@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { getJobs } from '../services/JobService';
 import type { Job } from '../models/Jobs';
@@ -8,6 +9,7 @@ export const JobList = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
 
   useEffect(() => {
     const getData = async () => {
