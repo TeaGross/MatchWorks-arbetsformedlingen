@@ -1,3 +1,14 @@
+import { DigiHeader } from "@digi/arbetsformedlingen-react"
+
 export const Header = () => {
-    return <></>
+    return <>
+    <DigiHeader 
+    afSystemName="match"
+    afHideSystemName= {false}
+    >
+    <a slot="header-logo" aria-label="Match startsida" href="/"></a>
+
+    </DigiHeader>
+    </>
+
 }
