@@ -50,10 +50,10 @@ export const JobList = () => {
             <DigiTypography afVariation={TypographyVariation.SMALL}>
               
                 {jobs?.map((job) => (
-                    <DigiLayoutContainer 
+                    <DigiLayoutContainer key={job.id}
                     af-vertical-padding={15}
                     >  
-                    <div key={job.id} className="ad-container">
+                    <div  className="ad-container">
                         <h3 className="ad-header">
                             <Link to={`/job/${job.id}`} state={{ job }}>
                                 {job.headline}
