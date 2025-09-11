@@ -44,9 +44,11 @@ export const JobList = () => {
 
     return (
     <>
+    {/* moved out searchform from designsystem */}
+    <SearchForm onSearchResult={setJobs} /> 
         <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
             <DigiTypography afVariation={TypographyVariation.SMALL}>
-              <SearchForm onSearchResult={setJobs} /> 
+              
                 {jobs?.map((job) => (
                     <DigiLayoutContainer 
                     af-vertical-padding={15}
