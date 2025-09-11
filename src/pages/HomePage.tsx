@@ -1,9 +1,9 @@
-import { JobList } from "../components/JobList"
-import { SearchForm } from "../components/SearchForm"
+import { JobList } from '../components/JobList';
 
 export const HomePage = () => {
-    return <>
-    <SearchForm />
-      <JobList/>
-  </>
-}
+  return (
+    <>
+      <JobList />
+    </>
+  );
+};

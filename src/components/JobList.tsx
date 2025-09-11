@@ -1,9 +1,12 @@
+
 import { useEffect, useState } from "react";
 import { getJobs } from "../services/JobService";
 import type { Job } from "../models/Jobs";
 import { Link } from "react-router-dom";
 import { DigiLayoutBlock, DigiLayoutContainer, DigiTypography } from "@digi/arbetsformedlingen-react";
 import { LayoutBlockVariation, TypographyVariation } from "@digi/arbetsformedlingen";
+import { SearchForm } from './SearchForm'; 
+
 
 export const JobList = () => {
     const [jobs, setJobs] = useState<Job[]>([]);
@@ -40,6 +43,7 @@ export const JobList = () => {
     }
 
     return (
+       <SearchForm onSearchResult={setJobs} /> 
         <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
             <DigiTypography afVariation={TypographyVariation.SMALL}>
                 {jobs?.map((job) => (
@@ -60,4 +64,3 @@ export const JobList = () => {
             </DigiTypography>
         </DigiLayoutBlock>
     );
-};
