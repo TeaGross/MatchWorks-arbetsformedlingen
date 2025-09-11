@@ -43,6 +43,7 @@ export const JobList = () => {
     }
 
     return (
+    <>
        <SearchForm onSearchResult={setJobs} /> 
         <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
             <DigiTypography afVariation={TypographyVariation.SMALL}>
@@ -63,4 +64,6 @@ export const JobList = () => {
                 ))}
             </DigiTypography>
         </DigiLayoutBlock>
-    );
+    </>
+    )
+}

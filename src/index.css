@@ -44,12 +44,12 @@
     /*JOBLIST */
     .ad-container{
       padding: 10px;
-      font-weight: 900;
+      font-weight: 800;
       --FONT-WEIGHT--HEADING-3: 
     }
 
     .ad-header a{
-      color: #dd387f;
+      color: #7b1a44;
       
     }
 
@@ -69,4 +69,4 @@
 body{
   margin: 0;
 }
-
+ 
