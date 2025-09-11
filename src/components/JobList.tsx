@@ -44,7 +44,6 @@ export const JobList = () => {
 
     return (
     <>
-       {/* <SearchForm onSearchResult={setJobs} />  */}
         <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
             <DigiTypography afVariation={TypographyVariation.SMALL}>
               <SearchForm onSearchResult={setJobs} /> 
