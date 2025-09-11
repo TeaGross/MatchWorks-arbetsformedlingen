@@ -19,4 +19,12 @@ export const getJobById = async (id: string): Promise<JobDetail> => {
     return data;
 };
 
-
+// search by query
+export const searchJobs = async (query: string): Promise<JobResult> => {
+  const params = new URLSearchParams({ q: query, offset: "0", limit: "10" });
+  const res = await fetch(
+    `https://jobsearch.api.jobtechdev.se/search?${params}`
+  );
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return await res.json();
+};

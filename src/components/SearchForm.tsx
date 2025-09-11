@@ -1,7 +1,8 @@
 import { useState } from "react";
-import type { Job, JobResult } from "../models/Jobs";
+import type { Job } from "../models/Jobs";
 import { DigiFormInputSearch } from "@digi/arbetsformedlingen-react";
 import { FormInputSearchVariation, FormInputType } from "@digi/arbetsformedlingen";
+import { searchJobs } from "../services/JobService";
 
 
 interface SearchFormProps {
@@ -15,12 +16,9 @@ export const SearchForm = ({ onSearchResult }: SearchFormProps) => {
     setQuery(value);
     if (!value.trim()) return;
 
-    try {
-      const params = new URLSearchParams({ q: value, offset: "0", limit: "10" });
-      const response = await fetch(`https://jobsearch.api.jobtechdev.se/search?${params}`);
-      if (!response.ok) throw new Error(`HTTP-fel ${response.status}`);
-      const data: JobResult = await response.json();
-      onSearchResult(data.hits); // send data hit back to parent
+     try {
+      const data = await searchJobs(value);
+      onSearchResult(data.hits); // send result back to JobList
     } catch (err) {
       console.error(err);
     }
