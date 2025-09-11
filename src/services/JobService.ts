@@ -2,9 +2,13 @@ import type { JobResult, JobDetail } from "../models/Jobs";
 
 
 // initial load
-export const getJobs = async (query: string, offset = 0, limit = 10): Promise<JobResult> => {
+export const getJobs = async (
+  query: string = "*",
+  offset = 0,
+  limit = 10
+): Promise<JobResult> => {
   const params = new URLSearchParams({
-    q: query || "*", // if query is empty use wildcard to always show 10 jobs
+    q: query,
     offset: offset.toString(),
     limit: limit.toString(),
   });
