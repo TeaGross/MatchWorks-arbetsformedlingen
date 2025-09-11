@@ -28,7 +28,7 @@ export const JobList = () => {
         };
 
         getData();
-    }, []);
+    }, [setJobs]);
 
     return (
     <div>
