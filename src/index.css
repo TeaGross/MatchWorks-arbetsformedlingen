@@ -16,16 +16,21 @@
 .sc-digi-button-h .digi-button.sc-digi-button {
     
     background: #1927f0;
-    
 
+  }
   /*HEADER */
     .sc-digi-logo svg{
       display: none;
+      
     }
 
     .sc-digi-logo{
-      display: none; /*Gömmer loggan */
+      display: none; /* Gömmer loggan */
       --digi--logo--system-name-color--primary: var(--digi--indigo-500)
+    }
+
+    .sc-digi-header-h .digi-header__border.sc-digi-header{
+      border: none; /* Tar bort border-bottom för header */
     }
 
     .digi-logo__system-name{
@@ -36,28 +41,23 @@
       --digi--logo--color--border--primary: none; /*Gömmer border till loggan */
 
     }
-
-    .sc-digi-icon-bars-h svg{
+        
+    .sc-digi-button-h .digi-button--variation-function.sc-digi-button{
       display: none; /* Gömmer hamburgermeny*/
     }
-    
+
+
     /*JOBLIST */
     .ad-container{
       padding: 10px;
-      font-weight: 800;
+      font-weight: 900;
       --FONT-WEIGHT--HEADING-3: 
     }
 
     .ad-header a{
-      color: #7b1a44;
+      color: #dd387f;
       
     }
-
-
-
-
-
-}
 
 .sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {
     --BACKGROUND: #1f2f49;
@@ -65,8 +65,7 @@
 }
     
 
-
 body{
   margin: 0;
 }
- 
+
