@@ -2,7 +2,7 @@
 import { useContext, useEffect, useState } from "react";
 import { getJobs } from "../services/JobService";
 import { Link } from "react-router-dom";
-import { DigiLayoutBlock, DigiTypography } from "@digi/arbetsformedlingen-react";
+import { DigiLayoutBlock, DigiLayoutContainer, DigiTypography } from "@digi/arbetsformedlingen-react";
 import { LayoutBlockVariation, TypographyVariation } from "@digi/arbetsformedlingen";
 import { SearchForm } from './SearchForm'; 
 import { JobContext } from "../context/Jobcontext";
