@@ -15,7 +15,7 @@
 
 .sc-digi-button-h .digi-button.sc-digi-button {
     
-    background: #1927f0;
+    background: var(--digi--water-700);
 
   }
   /*HEADER */
@@ -26,7 +26,7 @@
 
     .sc-digi-logo{
       display: none; /* Gömmer loggan */
-      --digi--logo--system-name-color--primary: var(--digi--indigo-500)
+      --digi--logo--system-name-color--primary: var(--digi--water-700);
     }
 
     .sc-digi-header-h .digi-header__border.sc-digi-header{
@@ -60,7 +60,7 @@
     }
 
 .sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {
-    --BACKGROUND: #1f2f49;
+    --BACKGROUND: var(--digi--water-700);
 }
 }
     

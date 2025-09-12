@@ -32,12 +32,13 @@ export const JobList = () => {
 
     return (
     <div>
-    <SearchForm onSearchResult={setJobs} /> 
+    
         <div>
-                    {loading ? "Laddar..." : error ? error : jobs.length === 0 ? "Inga jobb hittades." : null}
-              </div>
+            {loading ? "Laddar..." : error ? error : jobs.length === 0 ? "Inga jobb hittades." : null}
+        </div>
         
         <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
+            <SearchForm onSearchResult={setJobs} /> 
             <DigiTypography afVariation={TypographyVariation.SMALL}>
               
                 {jobs?.map((job) => (
