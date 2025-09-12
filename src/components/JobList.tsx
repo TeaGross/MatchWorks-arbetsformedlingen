@@ -7,7 +7,6 @@ import { LayoutBlockVariation, TypographyVariation } from "@digi/arbetsformedlin
 import { SearchForm } from './SearchForm'; 
 import { JobContext } from "../context/Jobcontext";
 
-
 export const JobList = () => {
     const {jobs, setJobs} = useContext(JobContext);
     const [loading, setLoading] = useState(true);
@@ -36,7 +35,6 @@ export const JobList = () => {
         <div>
             {loading ? "Laddar..." : error ? error : jobs.length === 0 ? "Inga jobb hittades." : null}
         </div>
-        
         <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
             <SearchForm onSearchResult={setJobs} /> 
             <DigiTypography afVariation={TypographyVariation.SMALL}>
@@ -57,7 +55,7 @@ export const JobList = () => {
                     </DigiLayoutContainer>
                 ))}
             </DigiTypography>
-        </DigiLayoutBlock>
+        </DigiLayoutBlock>        
     </div>
   );
 };

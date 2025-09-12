@@ -63,7 +63,17 @@
     --BACKGROUND: var(--digi--water-700);
 }
 }
-    
+  /*Fun facts */
+  /* .sc-digi-layout-columns {
+  } */
+  
+  .fun-fact-card{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
 body{
   margin: 0;
