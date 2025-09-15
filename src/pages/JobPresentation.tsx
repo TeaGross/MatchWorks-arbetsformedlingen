@@ -1,7 +1,8 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import type { Job, JobDetail } from "../models/Jobs";
 import { getJobById } from "../services/JobService";
+import { Link } from "react-router";
 
 export const JobPresentation = () => {
     const { state } = useLocation() as { state?: { job?: Job } };
@@ -34,6 +35,9 @@ export const JobPresentation = () => {
 
     return (
         <div>
+            <Link to={`/`} className="small">
+                ← Till alla jobb
+            </Link>
             <h2>{job.headline}</h2>
             <p>
                 <strong>Arbetsgivare:</strong> {job.employer?.name}
@@ -53,9 +57,7 @@ export const JobPresentation = () => {
             <p>
                 <strong>Beskrivning:</strong>
             </p>
-            <div>
-                {job.description?.text ?? "—"}
-            </div>
+            <div>{job.description?.text ?? "—"}</div>
             {job.webpage_url && (
                 <p>
                     <a
