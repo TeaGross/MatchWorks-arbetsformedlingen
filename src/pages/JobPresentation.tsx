@@ -4,9 +4,10 @@ import type { Job, JobDetail } from '../models/Jobs';
 import { getJobById } from '../services/JobService';
 import {
   DigiLayoutBlock,
+  DigiLoaderSpinner,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
-import { LayoutBlockVariation } from '@digi/arbetsformedlingen';
+import { LayoutBlockVariation, LoaderSpinnerSize } from '@digi/arbetsformedlingen';
 
 export const JobPresentation = () => {
   const { state } = useLocation() as { state?: { job?: Job } };
@@ -33,7 +34,22 @@ export const JobPresentation = () => {
     }
   }, [id, job]);
 
-  if (loading) return <div>Laddar…</div>;
+  if (loading)
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <DigiLoaderSpinner
+        afSize={LoaderSpinnerSize.MEDIUM}
+        afText="Laddar"
+      />
+    </div>
+  );
   if (error) return <div style={{ color: 'crimson' }}>{error}</div>;
   if (!job) return <div>Jobb hittades inte.</div>;
 
