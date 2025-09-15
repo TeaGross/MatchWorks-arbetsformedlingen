@@ -1,15 +1,21 @@
-
 import { useContext, useEffect, useState } from "react";
 import { getJobs } from "../services/JobService";
-import { Link } from "react-router-dom";
-import { DigiLayoutBlock, DigiLayoutContainer, DigiTypography } from "@digi/arbetsformedlingen-react";
-import { LayoutBlockVariation, TypographyVariation } from "@digi/arbetsformedlingen";
-import { SearchForm } from './SearchForm'; 
+import {
+    DigiLayoutBlock,
+    DigiLayoutContainer,
+    DigiTypography,
+} from "@digi/arbetsformedlingen-react";
+import {
+    LayoutBlockVariation,
+    TypographyVariation,
+} from "@digi/arbetsformedlingen";
+import { SearchForm } from "./SearchForm";
 import { JobContext } from "../context/Jobcontext";
-
+import { Link } from "react-router";
+import { DigiPagination } from "./Pagination";
 
 export const JobList = () => {
-    const {jobs, setJobs} = useContext(JobContext);
+    const { jobs, setJobs } = useContext(JobContext);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -19,7 +25,7 @@ export const JobList = () => {
             setError(null);
             try {
                 const jobs = await getJobs();
-                setJobs(jobs.hits);
+                setJobs(jobs.hits ?? []);
             } catch (error) {
                 console.error("Error fetching jobs:", error);
             } finally {
@@ -31,34 +37,36 @@ export const JobList = () => {
     }, [setJobs]);
 
     return (
-    <div>
-    <SearchForm onSearchResult={setJobs} /> 
         <div>
-                    {loading ? "Laddar..." : error ? error : jobs.length === 0 ? "Inga jobb hittades." : null}
-              </div>
-        
-        <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
-            <DigiTypography afVariation={TypographyVariation.SMALL}>
-              
-                {jobs?.map((job) => (
-                    <DigiLayoutContainer key={job.id}
-                    af-vertical-padding={15}
-                    >  
-                    <div  className="ad-container">
-                        <h3 className="ad-header">
-                            <Link to={`/job/${job.id}`} state={{ job }}>
-                                {job.headline}
-                            </Link>
-                        </h3>
-                        <p>{job.employer?.name}</p>
-                        <p>{job.workplace_address?.municipality}</p>
-                    </div>
-                    </DigiLayoutContainer>
-                ))}
-            </DigiTypography>
-        </DigiLayoutBlock>
-    </div>
-  );
+            <SearchForm onSearchResult={setJobs} />
+            <div>
+                {loading
+                    ? "Laddar..."
+                    : error
+                    ? error
+                    : jobs.length === 0
+                    ? "Inga jobb hittades."
+                    : null}
+            </div>
+
+            <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
+                <DigiLayoutContainer af-vertical-padding={15}>
+                    <DigiTypography afVariation={TypographyVariation.SMALL}>
+                        {jobs?.map((job) => (
+                            <div key={job.id} className="ad-container">
+                                <Link to={`/job/${job.id}`}>
+                                    <h3 className="ad-header">
+                                        {job.headline}
+                                    </h3>
+                                </Link>
+                                <p>{job.employer?.name}</p>
+                                <p>{job.workplace_address?.municipality}</p>
+                            </div>
+                        ))}
+                    </DigiTypography>
+                </DigiLayoutContainer>
+            </DigiLayoutBlock>
+            <DigiPagination />
+        </div>
+    );
 };
-
-

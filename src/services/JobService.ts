@@ -1,30 +1,35 @@
 import type { JobResult, JobDetail } from "../models/Jobs";
 
+const BASE = "https://jobsearch.api.jobtechdev.se";
 
-// initial load
-export const getJobs = async () => {
-    const response = await fetch(
-        "https://jobsearch.api.jobtechdev.se/search?offset=0&limit=10"
-    );
-    const jobs: JobResult = await response.json();
-
-    return jobs;
+// 1-baserad page in, 0-baserad offset till API
+export const getJobs = async (
+    page: number = 0,
+    limit = 15
+): Promise<JobResult> => {
+    const offset = page * limit + 1;
+    const res = await fetch(`${BASE}/search?offset=${offset}&limit=${limit}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+    return res.json();
 };
 
-//job by id
+export const searchJobs = async (
+    query: string,
+    limit = 15
+): Promise<JobResult> => {
+    const offset = 0;
+    const params = new URLSearchParams({
+        q: query,
+        offset: String(offset),
+        limit: String(limit),
+    });
+    const res = await fetch(`${BASE}/search?${params.toString()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+    return res.json();
+};
+
 export const getJobById = async (id: string): Promise<JobDetail> => {
-    const res = await fetch(`https://jobsearch.api.jobtechdev.se/ad/${id}`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data: JobDetail = await res.json();
-    return data;
-};
-
-// search by query
-export const searchJobs = async (query: string): Promise<JobResult> => {
-  const params = new URLSearchParams({ q: query, offset: "0", limit: "10" });
-  const res = await fetch(
-    `https://jobsearch.api.jobtechdev.se/search?${params}`
-  );
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return await res.json();
+    const res = await fetch(`${BASE}/ad/${id}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+    return res.json();
 };
