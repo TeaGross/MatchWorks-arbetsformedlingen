@@ -15,6 +15,7 @@ import {
 import { SearchForm } from './SearchForm';
 import { JobContext } from '../context/Jobcontext';
 
+
 export const JobList = () => {
   const { jobs, setJobs } = useContext(JobContext);
   const [loading, setLoading] = useState(true);
@@ -39,7 +40,6 @@ export const JobList = () => {
 
   return (
     <div>
-      <div>
         {loading ? (
           <div
             style={{
