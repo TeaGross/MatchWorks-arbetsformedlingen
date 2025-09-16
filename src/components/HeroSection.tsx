@@ -26,9 +26,9 @@ export const HeroSection = () => {
           afImageSrc="/Profil-Business-Manager.jpg"
           afImageAlt="Leende ung kvinna på kontoret"
           afQuoteAuthorName="Sofia Larsson"
-          afQuoteAuthorTitle="UX-designer på BrightTech"
+          afQuoteAuthorTitle="Frontend Developer på BrightTech"
         >
-          Tack vare den här sidan hittade jag mitt drömjobb som UX-designer!
+          Tack vare den här sidan hittade jag mitt drömjobb som webbutvecklare!
           Ansökningsprocessen var enkel och jag kände mig stöttad hela vägen. Nu
           får jag arbeta med kreativa projekt varje dag och utvecklas i en miljö
           som verkligen inspirerar mig.
