@@ -18,15 +18,15 @@ export const FunFacts  = () => {
                 <div className="fun-fact-card">
                     <DigiMediaImage
                      afUnlazy
-                     afWidth="100"
-                     afSrc="src/assets/match-logo.png"
+                     afWidth="200"
+                     afSrc="src/assets/sweden-icon.png"
                      afAlt="Hej och hå"></DigiMediaImage>
                     <p>Sverige har en av världens högsta sysselsättningsgrader, över 80 % av befolkningen i arbetsför ålder jobbar.</p>
                 </div>
                 <div className="fun-fact-card">
                     <DigiMediaImage
                      afUnlazy
-                     afWidth="100"
+                     afWidth="200"
                      afSrc="src/assets/match-logo.png"
                      afAlt="Hej och hå"></DigiMediaImage>
                     <p>Ett bra CV är som en första dejt, du får bara en chans att göra ett bra första intryck.</p>
@@ -34,8 +34,8 @@ export const FunFacts  = () => {
                 <div className="fun-fact-card">
                      <DigiMediaImage
                      afUnlazy
-                     afWidth="100"
-                     afSrc="src/assets/match-logo.png"
+                     afWidth="200"
+                     afSrc="src/assets/recruiter-icon.png"
                      afAlt="Hej och hå"></DigiMediaImage>
                     <p>3 av 5 rekryterare granskar din LinkedIn-profil noggrant innan de faktiskt ringer upp.</p>
                 </div>
