@@ -5,6 +5,7 @@ import {
 } from '@digi/arbetsformedlingen-react';
 
 export const Header = () => {
+
   return (
     <>
       <DigiHeader afSystemName="MatchWork" afHideSystemName={false}>
@@ -25,6 +26,7 @@ export const Header = () => {
         </DigiHeaderNavigation>
         <a slot="header-logo" className='logo' aria-label="Match startsida" href="/"></a>
       </DigiHeader>
+
     </>
   );
 };
