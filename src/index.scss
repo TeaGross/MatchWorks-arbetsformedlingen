@@ -3,6 +3,8 @@
 
 
 :root {
+
+
 .sc-digi-form-input-h .digi-form-input--medium.sc-digi-form-input {
     --HEIGHT: var(--digi--form-input--height--small);
 }
@@ -64,8 +66,6 @@
 }
 }
   /*Fun facts */
-  /* .sc-digi-layout-columns {
-  } */
   
   .fun-fact-card{
     margin-bottom: 20px;
@@ -73,9 +73,11 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+
   }
 
 body{
   margin: 0;
 }
+
 

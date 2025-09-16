@@ -1,7 +1,10 @@
 import { LayoutColumnsElement, LayoutColumnsVariation, TypographyVariation } from "@digi/arbetsformedlingen"
 import { DigiLayoutBlock, DigiLayoutColumns, DigiLayoutContainer, DigiMediaImage, DigiTypography } from "@digi/arbetsformedlingen-react"
+import { useMediaQuery } from "react-responsive";
 
 export const FunFacts  = () => {
+    const isMobile = useMediaQuery({ maxWidth: 768 });
+
     return <>
        <DigiLayoutBlock>
         <DigiTypography afVariation={TypographyVariation.LARGE}>
@@ -10,7 +13,7 @@ export const FunFacts  = () => {
             <h2>WorkMatch: Upptäck karriärmöjligheter i Sverige!</h2>
             <DigiLayoutColumns 
             afElement={LayoutColumnsElement.DIV}
-            afVariation={LayoutColumnsVariation.THREE}
+            afVariation={isMobile ? LayoutColumnsVariation.ONE : LayoutColumnsVariation.THREE}
             >
                 <div className="fun-fact-card">
                     <DigiMediaImage
