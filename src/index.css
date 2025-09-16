@@ -1,69 +1,85 @@
 @import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css';
 @import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css';
 
-
 :root {
-
-
-.sc-digi-form-input-h .digi-form-input--medium.sc-digi-form-input {
+  /* SearchForm */
+  .sc-digi-form-input-h .digi-form-input--medium.sc-digi-form-input {
     --HEIGHT: var(--digi--form-input--height--small);
-}
-.sc-digi-form-input-h .digi-form-input.sc-digi-form-input {
-    max-width:400px;
-    
-    margin-left: 2rem;
-}
-
-
-.sc-digi-button-h .digi-button.sc-digi-button {
-    
-    background: var(--digi--water-700);
-
   }
+  .sc-digi-form-input-h .digi-form-input.sc-digi-form-input {
+    padding: 10px;
+    max-width: 500px;
+    margin-left: 1rem;
+  }
+
+  .sc-digi-button-h .digi-button.sc-digi-button {
+    background: var(--digi--water-700);
+  }
+
+  .citat {
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+  margin-bottom: 2rem;            
+  
+  }
+
+  /* HeroSection */
+  digi-typography h2,
+  digi-typography .digi-h2 {
+    font-size: var(--FONT-SIZE--HEADING-2);
+    margin-bottom: var(--MARGIN--HEADING-1);
+    color: #dd387f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+
   /*HEADER */
-    .sc-digi-logo svg{
-      display: none;
-      
-    }
+  .sc-digi-logo svg {
+    display: none;
+  }
 
-    .sc-digi-logo{
-      display: none; /* Gömmer loggan */
-      --digi--logo--system-name-color--primary: var(--digi--water-700);
-    }
+  .sc-digi-logo {
+    display: none; /* Gömmer loggan */
+    --digi--logo--system-name-color--primary: var(--digi--water-700);
+  }
 
-    .sc-digi-header-h .digi-header__border.sc-digi-header{
-      border: none; /* Tar bort border-bottom för header */
-    }
+  .sc-digi-header-h .digi-header__border.sc-digi-header {
+    border: none; /* Tar bort border-bottom för header */
+  }
 
-    .digi-logo__system-name{
-      --digi--logo--font-size--system: var(--digi--typography--heading-1--font-size--desktop);
-    }
+  .digi-logo__system-name {
+    --digi--logo--font-size--system: var(
+      --digi--typography--heading-1--font-size--desktop
+    );
+  }
 
-    .sc-digi-logo-h{
-      --digi--logo--color--border--primary: none; /*Gömmer border till loggan */
+  .sc-digi-logo-h {
+    --digi--logo--color--border--primary: none; /*Gömmer border till loggan */
+  }
 
-    }
-        
-    .sc-digi-button-h .digi-button--variation-function.sc-digi-button{
-      display: none; /* Gömmer hamburgermeny*/
-    }
+  .sc-digi-button-h .digi-button--variation-function.sc-digi-button {
+    display: none; /* Gömmer hamburgermeny*/
+  }
 
+  /*JOBLIST */
+  .ad-container {
+    padding: 10px;
+    font-weight: 900;
+    --FONT-WEIGHT--HEADING-3: ;
+  }
 
-    /*JOBLIST */
-    .ad-container{
-      padding: 10px;
-      font-weight: 900;
-      --FONT-WEIGHT--HEADING-3: 
-    }
+  .ad-header a {
+    color: #dd387f;
+  }
 
-    .ad-header a{
-      color: #dd387f;
-      
-    }
-
-.sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {
+  .sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {
     --BACKGROUND: var(--digi--water-700);
+  }
 }
+
 }
   /*Fun facts */
   
@@ -76,8 +92,8 @@
 
   }
 
-body{
+
+body {
   margin: 0;
 }
-
 
