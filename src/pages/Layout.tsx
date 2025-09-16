@@ -7,9 +7,11 @@ import type { Job } from "../models/Jobs"
 
 export const Layout = () => {
     const [jobs, setJobs] = useState<Job[]>([]);
+    const [query, setQuery] = useState("");
+
 
     return <>
-    <JobContext.Provider value={{jobs, setJobs}}>
+    <JobContext.Provider value={{jobs, setJobs, query, setQuery}}>
         <Header/>
         <main><Outlet/></main>
         <Footer/>

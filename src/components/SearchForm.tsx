@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
 import type { Job } from "../models/Jobs";
 import { DigiFormInputSearch } from "@digi/arbetsformedlingen-react";
 import { FormInputSearchVariation, FormInputType } from "@digi/arbetsformedlingen";
-import { searchJobs } from "../services/JobService";
+import { getJobs } from "../services/JobService";
+import { JobContext } from "../context/Jobcontext";
 
 
 interface SearchFormProps {
@@ -10,14 +11,14 @@ interface SearchFormProps {
 }
 
 export const SearchForm = ({ onSearchResult }: SearchFormProps) => {
-  const [query, setQuery] = useState("");
+  const {query, setQuery} = useContext(JobContext);
 
   const handleSearch = async (value: string) => {
     setQuery(value);
     if (!value.trim()) return;
 
      try {
-      const data = await searchJobs(value);
+      const data = await getJobs(undefined, value);
       onSearchResult(data.hits); // send result back to JobList
     } catch (err) {
       console.error(err);

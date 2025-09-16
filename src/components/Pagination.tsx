@@ -4,12 +4,12 @@ import { getJobs } from "../services/JobService";
 import { JobContext } from "../context/Jobcontext";
 
 export const DigiPagination = () => {
-    const { setJobs } = useContext(JobContext);
+    const { setJobs, query } = useContext(JobContext);
     // const navigate = useNavigate();
     const handlePageChange = (event: CustomEvent<number>) => {
         const getData = async () => {
             const newPage = event.detail;
-            const jobs = await getJobs(newPage);
+            const jobs = await getJobs(newPage, query);
             setJobs(jobs.hits ?? []);
         };
         getData();
