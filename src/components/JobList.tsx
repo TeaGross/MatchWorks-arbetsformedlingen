@@ -40,44 +40,45 @@ export const JobList = () => {
 
   return (
     <div>
-        {loading ? (
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <DigiLoaderSpinner
-              afSize={LoaderSpinnerSize.MEDIUM}
-              afText="Laddar"
-            />
-          </div>
-        ) : error ? (
-          error
-        ) : jobs.length === 0 ? (
-          'Inga jobb hittades.'
-        ) : null}
+      <div>
+          {loading ? (
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <DigiLoaderSpinner
+                afSize={LoaderSpinnerSize.MEDIUM}
+                afText="Laddar"
+              />
+            </div>
+          ) : error ? (
+            error
+          ) : jobs.length === 0 ? (
+            'Inga jobb hittades.'
+          ) : null}
+        </div>
+  
+        <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
+          <SearchForm onSearchResult={setJobs} />
+          <DigiTypography afVariation={TypographyVariation.SMALL}>
+            {jobs?.map((job) => (
+              <DigiLayoutContainer key={job.id} af-vertical-padding={15}>
+                <div className="ad-container">
+                  <h3 className="ad-header">
+                    <Link to={`/job/${job.id}`} state={{ job }}>
+                      {job.headline}
+                    </Link>
+                  </h3>
+                  <p>{job.employer?.name}</p>
+                  <p>{job.workplace_address?.municipality}</p>
+                </div>
+              </DigiLayoutContainer>
+            ))}
+          </DigiTypography>
+        </DigiLayoutBlock>
       </div>
-
-      <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
-        <SearchForm onSearchResult={setJobs} />
-        <DigiTypography afVariation={TypographyVariation.SMALL}>
-          {jobs?.map((job) => (
-            <DigiLayoutContainer key={job.id} af-vertical-padding={15}>
-              <div className="ad-container">
-                <h3 className="ad-header">
-                  <Link to={`/job/${job.id}`} state={{ job }}>
-                    {job.headline}
-                  </Link>
-                </h3>
-                <p>{job.employer?.name}</p>
-                <p>{job.workplace_address?.municipality}</p>
-              </div>
-            </DigiLayoutContainer>
-          ))}
-        </DigiTypography>
-      </DigiLayoutBlock>
-    </div>
   );
 };
