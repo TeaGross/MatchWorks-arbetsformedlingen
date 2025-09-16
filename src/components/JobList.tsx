@@ -12,7 +12,7 @@ import {
   LoaderSpinnerSize,
   TypographyVariation,
 } from '@digi/arbetsformedlingen';
-import { SearchForm } from '../components/SearchForm';
+import { SearchForm } from './SearchForm';
 import { JobContext } from '../context/Jobcontext';
 
 

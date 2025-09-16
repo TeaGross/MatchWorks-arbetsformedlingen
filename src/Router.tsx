@@ -3,7 +3,7 @@ import { Layout } from "./pages/Layout";
 import { Error } from "./pages/Error";
 import { HomePage } from "./pages/HomePage";
 import { JobPresentation } from "./pages/JobPresentation";
-import { JobList } from "./pages/JobList";
+import { JobList } from "./components/JobList";
 
 export const Router = createBrowserRouter([
     {
