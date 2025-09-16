@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <>
   
-<DigiFooter afVariation={FooterVariation.SMALL}>
+<DigiFooter id="footer" afVariation={FooterVariation.SMALL}>
   <div slot="content-top">
     <div>
       <DigiFooterCard afType={FooterCardVariation.ICON}>
