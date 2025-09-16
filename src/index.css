@@ -17,11 +17,10 @@
   }
 
   .citat {
-  display: flex;
-  justify-content: center;
-  align-items: center;   
-  margin-bottom: 2rem;            
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
   }
 
   /* HeroSection */
@@ -37,9 +36,46 @@
   }
 
   /*HEADER */
-  .sc-digi-logo svg {
-    display: none;
+  .sc-digi-header-navigation-h
+    .digi-header-navigation__inner.sc-digi-header-navigation {
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: 40px;
+    
   }
+
+  /*HEADER */
+  .sc-digi-header-navigation-item-h.sc-digi-header-navigation-item-s>a, .sc-digi-header-navigation-item-h .sc-digi-header-navigation-item-s>a
+Specificitet: (0,2,1)
+ {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    color: var(--digi--header-navigation-item--color);
+    font-family: var(--digi--header-navigation-item--font-family);
+    font-size: var(--digi--header-navigation-item--font-size);
+}
+
+  /* Navigation */
+  .sc-digi-header-navigation-h
+    .digi-header-navigation__inner.sc-digi-header-navigation {
+    margin-top: 2.5rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+    margin-bottom: 2rem;
+  }
+
+  /* Navigation */
+  .sc-digi-header-navigation-item-h.sc-digi-header-navigation-item-s>a, .sc-digi-header-navigation-item-h .sc-digi-header-navigation-item-s>a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem;
+    
+}
 
   .sc-digi-logo {
     display: none; /* Gömmer loggan */
@@ -60,8 +96,10 @@
     --digi--logo--color--border--primary: none; /*Gömmer border till loggan */
   }
 
+  /* Hamburger menu */
   .sc-digi-button-h .digi-button--variation-function.sc-digi-button {
-    display: none; /* Gömmer hamburgermeny*/
+    background-color: #fff;
+    font-size: 1.2rem;
   }
 
   /*JOBLIST */
