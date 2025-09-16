@@ -3,12 +3,13 @@ import {
   DigiHeaderNavigation,
   DigiHeaderNavigationItem,
 } from '@digi/arbetsformedlingen-react';
+import { Link } from 'react-router';
 
 export const Header = () => {
 
   return (
     <>
-      <DigiHeader afSystemName="MatchWork" afHideSystemName={false}>
+      <DigiHeader afSystemName="MatchWorks" afHideSystemName={false}>
         <DigiHeaderNavigation
           afCloseButtonText="Stäng"
           afCloseButtonAriaLabel="Stäng meny"
@@ -18,7 +19,7 @@ export const Header = () => {
             <a href="/">Hem</a>
           </DigiHeaderNavigationItem>
           <DigiHeaderNavigationItem>
-            <a href="/">Jobb Sidan</a>
+            <Link to="/JobPage">Jobb Sidan</Link>
           </DigiHeaderNavigationItem>
           <DigiHeaderNavigationItem>
             <a href="#footer">Kontakt</a>
