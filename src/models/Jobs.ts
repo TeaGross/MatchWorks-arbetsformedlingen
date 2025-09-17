@@ -19,5 +19,5 @@ export type JobDetail = Job & {
 
 export type JobResult = {
     hits: Job[];
-    total: number;
+    total: { value: number };
 };
