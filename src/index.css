@@ -83,6 +83,7 @@ Specificitet: (0,2,1) {
     text-align: center;
     width: 8rem;
     margin-bottom: 2rem;
+    background: var(--digi--water-700); 
   }
 
   .sc-digi-logo {
