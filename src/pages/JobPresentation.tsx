@@ -2,12 +2,14 @@ import { useLocation, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import type { Job, JobDetail } from '../models/Jobs';
 import { getJobById } from '../services/JobService';
+import { Link } from "react-router";
 import {
   DigiLayoutBlock,
   DigiLoaderSpinner,
   DigiTypography,
 } from '@digi/arbetsformedlingen-react';
 import { LayoutBlockVariation, LoaderSpinnerSize } from '@digi/arbetsformedlingen';
+
 
 export const JobPresentation = () => {
   const { state } = useLocation() as { state?: { job?: Job } };
@@ -57,6 +59,9 @@ export const JobPresentation = () => {
     <>
       <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
         <DigiTypography>
+          <Link to={`/`} className="small">
+                ← Till alla jobb
+          </Link>
           <h2 style={{ color: '#dd387f' }}>{job.headline}</h2>
           <p>
             <strong>Arbetsgivare:</strong> {job.employer?.name}
