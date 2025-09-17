@@ -45,9 +45,9 @@
   }
 
   /*Line under navigation text */
-.digi-header-navigation-item-indicator--active.sc-digi-header-navigation-item {
+  .digi-header-navigation-item-indicator--active.sc-digi-header-navigation-item {
     --INDICATOR-COLOR: #21217b;
-}
+  }
 
   /*HEADER */
   .sc-digi-header-navigation-item-h.sc-digi-header-navigation-item-s>a, .sc-digi-header-navigation-item-h .sc-digi-header-navigation-item-s>a
@@ -89,7 +89,20 @@ Specificitet: (0,2,1) {
     width: 8rem;
     margin-bottom: 2rem;
     background: var(--digi--water-700);
+    color: #21217b;
   }
+
+  /* Link back to homepage */
+  .sc-digi-link-s > a {
+    color: #21217b;
+    margin-bottom: 3rem;
+  }
+
+  .sc-digi-link-s>a [class*=digi-icon], .sc-digi-link-s>a [slot^=icon] {
+    color: #21217b;
+    margin-left: 1.2rem;
+}
+
 
   .sc-digi-logo {
     display: none; /* Gömmer loggan */
