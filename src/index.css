@@ -1,68 +1,180 @@
-@import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css";
-@import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css";
+@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css';
+@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css';
 
 :root {
-    .sc-digi-form-input-h .digi-form-input--medium.sc-digi-form-input {
-        --HEIGHT: var(--digi--form-input--height--small);
-    }
-    .sc-digi-form-input-h .digi-form-input.sc-digi-form-input {
-        max-width: 400px;
+  /* SearchForm */
+  .sc-digi-form-input-h .digi-form-input--medium.sc-digi-form-input {
+    --HEIGHT: var(--digi--form-input--height--small);
+  }
+  .sc-digi-form-input-h .digi-form-input.sc-digi-form-input {
+    padding: 10px;
+    max-width: 500px;
+    margin-left: 1rem;
+  }
 
-        margin-left: 2rem;
-    }
+  .sc-digi-button-h .digi-button.sc-digi-button {
+    background: var(--digi--water-700);
+  }
 
-    .sc-digi-button-h .digi-button.sc-digi-button {
-        background: #1927f0;
-    }
-    /*HEADER */
-    .sc-digi-logo svg {
-        display: none;
-    }
+  .citat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
 
-    .sc-digi-logo {
-        display: none; /* Gömmer loggan */
-        --digi--logo--system-name-color--primary: var(--digi--indigo-500);
-    }
+  /* HeroSection */
+  digi-typography h2,
+  digi-typography .digi-h2 {
+    font-size: var(--FONT-SIZE--HEADING-2);
+    margin-bottom: var(--MARGIN--HEADING-1);
+    color: #dd387f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
 
-    .sc-digi-header-h .digi-header__border.sc-digi-header {
-        border: none; /* Tar bort border-bottom för header */
-    }
+  /*HEADER */
+  .sc-digi-header-navigation-h
+    .digi-header-navigation__inner.sc-digi-header-navigation {
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: 40px;
+  }
 
-    .digi-logo__system-name {
-        --digi--logo--font-size--system: var(
-            --digi--typography--heading-1--font-size--desktop
-        );
-    }
+  /*HEADER */
+  .sc-digi-header-navigation-item-h.sc-digi-header-navigation-item-s>a, .sc-digi-header-navigation-item-h .sc-digi-header-navigation-item-s>a
+Specificitet: (0,2,1) {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    color: var(--digi--header-navigation-item--color);
+    font-family: var(--digi--header-navigation-item--font-family);
+    font-size: var(--digi--header-navigation-item--font-size);
+  }
 
-    .sc-digi-logo-h {
-        --digi--logo--color--border--primary: none; /*Gömmer border till loggan */
-    }
+  /* Navigation */
+  .sc-digi-header-navigation-h
+    .digi-header-navigation__inner.sc-digi-header-navigation {
+    margin-top: 2.5rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+    margin-bottom: 2rem;
+  }
 
-    .sc-digi-button-h .digi-button--variation-function.sc-digi-button {
-        display: none; /* Gömmer hamburgermeny*/
-    }
+  /* Navigation */
+  .sc-digi-header-navigation-item-h.sc-digi-header-navigation-item-s > a,
+  .sc-digi-header-navigation-item-h .sc-digi-header-navigation-item-s > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem;
+  }
 
-    /*JOBLIST */
-    .ad-container {
-        padding: 10px;
-        font-weight: 900;
-        --FONT-WEIGHT--HEADING-3: ;
-    }
+  /* Button to jobpage */
+  .digi-link-button--medium.sc-digi-link-button-h a.sc-digi-link-button {
+    display: block;
+    margin: 0 auto;
+    height: var(--LINK--HEIGHT);
+    text-align: center;
+    width: 8rem;
+    margin-bottom: 2rem;
+    background: var(--digi--water-700); 
+  }
 
-    .ad-header a {
-        color: #dd387f;
-    }
+  .sc-digi-logo {
+    display: none; /* Gömmer loggan */
+    --digi--logo--system-name-color--primary: var(--digi--water-700);
+  }
 
-    .sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {
-        --BACKGROUND: #1f2f49;
-    }
+  .sc-digi-header-h .digi-header__border.sc-digi-header {
+    border: none; /* Tar bort border-bottom för header */
+  }
+
+  .digi-logo__system-name {
+    --digi--logo--font-size--system: var(
+      --digi--typography--heading-1--font-size--desktop
+    );
+  }
+
+  .sc-digi-logo-h {
+    --digi--logo--color--border--primary: none; /*Gömmer border till loggan */
+  }
+
+  /* Hamburger menu */
+  .sc-digi-button-h .digi-button--variation-function.sc-digi-button {
+    background-color: #fff;
+    font-size: 1.2rem;
+  }
+
+  /*JOBLIST */
+  .ad-container {
+    padding: 10px;
+    font-weight: 900;
+    --FONT-WEIGHT--HEADING-3: ;
+  }
+
+  .ad-header a {
+    color: #dd387f;
+  }
+
+  .sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {
+    --BACKGROUND: var(--digi--water-700);
+  }
+}
+
+/*Fun facts */
+.fun-fact-card {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .small {
     font-size: 1.2rem;
     color: var(--muted);
 }
+
+/*Why matchwork */
+
+.info-matchwork{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.sc-digi-info-card-multi-h .digi-info-card-multi__link.sc-digi-info-card-multi{
+  text-decoration: none;
+  color: #dd387f;
+}
+
+.sc-digi-info-card-multi-h .digi-info-card-multi--related.sc-digi-info-card-multi{
+  border-top-color: #21217b;
+}
+
+.sc-digi-info-card-multi-h{
+  --digi--info-card-multi--border: var(--digi--border-width--complementary-2) solid var(--digi--color--border--secondary);
+}
+
+.sc-digi-layout-columns-h .digi-layout-columns.sc-digi-layout-columns{
+  display:  block;
+}
+
+@media screen and (min-width: 768px) {
+  .sc-digi-layout-columns-h .digi-layout-columns.sc-digi-layout-columns{
+  display:  grid;
+}
+}
+
+

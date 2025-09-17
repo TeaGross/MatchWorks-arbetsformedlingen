@@ -33,40 +33,50 @@ export const JobList = () => {
             }
         };
 
-        getData();
-    }, [setJobs]);
-
-    return (
-        <div>
-            <SearchForm onSearchResult={setJobs} />
-            <div>
-                {loading
-                    ? "Laddar..."
-                    : error
-                    ? error
-                    : jobs.length === 0
-                    ? "Inga jobb hittades."
-                    : null}
+    getData();
+  }, [setJobs]);
+  
+  return (
+    <div>
+      <div>
+          {loading ? (
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <DigiLoaderSpinner
+                afSize={LoaderSpinnerSize.MEDIUM}
+                afText="Laddar"
+              />
             </div>
-
-            <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
-                <DigiLayoutContainer af-vertical-padding={15}>
-                    <DigiTypography afVariation={TypographyVariation.SMALL}>
-                        {jobs?.map((job) => (
-                            <div key={job.id} className="ad-container">
-                                <Link to={`/job/${job.id}`}>
-                                    <h3 className="ad-header">
-                                        {job.headline}
-                                    </h3>
-                                </Link>
-                                <p>{job.employer?.name}</p>
-                                <p>{job.workplace_address?.municipality}</p>
-                            </div>
-                        ))}
-                    </DigiTypography>
-                </DigiLayoutContainer>
-            </DigiLayoutBlock>
-            <DigiPagination />
+          ) : error ? (
+            error
+          ) : jobs.length === 0 ? (
+            'Inga jobb hittades.'
+          ) : null}
         </div>
-    );
+  
+        <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
+          <SearchForm onSearchResult={setJobs} />
+          <DigiTypography afVariation={TypographyVariation.SMALL}>
+            {jobs?.map((job) => (
+              <DigiLayoutContainer key={job.id} af-vertical-padding={15}>
+                <div className="ad-container">
+                  <h3 className="ad-header">
+                    <Link to={`/job/${job.id}`} state={{ job }}>
+                      {job.headline}
+                    </Link>
+                  </h3>
+                  <p>{job.employer?.name}</p>
+                  <p>{job.workplace_address?.municipality}</p>
+                </div>
+              </DigiLayoutContainer>
+            ))}
+          </DigiTypography>
+        </DigiLayoutBlock>
+      </div>
+  );
 };
