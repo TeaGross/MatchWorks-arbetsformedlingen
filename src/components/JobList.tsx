@@ -17,7 +17,7 @@ import { Link } from "react-router";
 import { DigiPagination } from "./Pagination";
 
 export const JobList = () => {
-    const { jobs, setJobs } = useContext(JobContext);
+    const { jobs, setJobs, setPage, page,  totalResult, setTotalResult } = useContext(JobContext);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -28,6 +28,8 @@ export const JobList = () => {
             try {
                 const jobs = await getJobs();
                 setJobs(jobs.hits ?? []);
+                setTotalResult(jobs.total.value)
+                setPage(1);
             } catch (error) {
                 console.error("Error fetching jobs:", error);
             } finally {
@@ -36,7 +38,9 @@ export const JobList = () => {
         };
 
     getData();
-  }, [setJobs]);
+  }, [setJobs, setTotalResult, setPage]);
+
+  console.log(totalResult, page )
   
   return (
     <div>

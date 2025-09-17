@@ -13,16 +13,16 @@ interface SearchFormProps {
 }
 
 export const SearchForm = ({ onSearchResult }: SearchFormProps) => {
-    const { query, setQuery, page, setPage } = useContext(JobContext);
+    const { query, setQuery, page, setPage, totalResult, setTotalResult } = useContext(JobContext);
 
     const handleSearch = async (value: string) => {
         setQuery(value);
-        setPage(1);
         if (!value.trim()) return;
 
         try {
             const data = await getJobs(page, value);
-            onSearchResult(data.hits); // send result back to JobList
+            onSearchResult(data.hits);
+            setTotalResult(data.total.value); // send result back to JobList
         } catch (err) {
             console.error(err);
         }
