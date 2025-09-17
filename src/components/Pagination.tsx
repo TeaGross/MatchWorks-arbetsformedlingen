@@ -14,14 +14,10 @@ export const DigiPagination = () => {
         const getData = async () => {
             const data = await getJobs(newPage, query);
             setJobs(data.hits ?? []);
-            const number = Number(data.total.value);
-            setTotalResult(number);
+            setTotalResult(Math.min(data.total.value || data.hits.length || 0, 2000));
         };
         getData();
     };
-
-    // console.log(totalResult);
-    // console.log(page);
 
     const totalPages = Math.ceil(totalResult / limit);
 
