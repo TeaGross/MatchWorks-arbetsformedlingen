@@ -1,39 +1,55 @@
-@import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css";
-@import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css";
+@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css';
+@import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css';
 
 :root {
-    /* SearchForm */
-    .sc-digi-form-input-h .digi-form-input--medium.sc-digi-form-input {
-        --HEIGHT: var(--digi--form-input--height--small);
-    }
-    .sc-digi-form-input-h .digi-form-input.sc-digi-form-input {
-        padding: 10px;
-        max-width: 500px;
-        margin-left: 1rem;
-    }
+  /* SearchForm */
+  .sc-digi-form-input-h .digi-form-input--medium.sc-digi-form-input {
+    --HEIGHT: var(--digi--form-input--height--small);
+  }
+  .sc-digi-form-input-h .digi-form-input.sc-digi-form-input {
+    padding: 10px;
+    max-width: 500px;
+    margin-left: 1rem;
+  }
+  
+   /* searchform btn */
+  .digi-form-input--button-variation-primary
+    .digi-form-input__input-wrapper.sc-digi-form-input-s
+    > [slot^='button']
+    button,
+  .digi-form-input__input-wrapper
+    .sc-digi-form-input-s
+    > [slot^='button']
+    button {
+    border-start-start-radius: 0;
+    border-end-start-radius: 0;
+    background: var(--digi--water-700);
+    background: #21217b;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 0;
+    height: 1rem;
+    width: fit-content;
+  }
 
-    .sc-digi-button-h .digi-button.sc-digi-button {
-        background: var(--digi--water-700);
-    }
+  .citat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
 
-    .citat {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 2rem;
-    }
-
-    /* HeroSection */
-    digi-typography h2,
-    digi-typography .digi-h2 {
-        font-size: var(--FONT-SIZE--HEADING-2);
-        margin-bottom: var(--MARGIN--HEADING-1);
-        color: #dd387f;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 1rem;
-    }
+  /* HeroSection */
+  digi-typography h2,
+  digi-typography .digi-h2 {
+    font-size: var(--FONT-SIZE--HEADING-2);
+    margin-bottom: var(--MARGIN--HEADING-1);
+    color: #dd387f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
 
   /*HEADER */
   .sc-digi-header-navigation-h
@@ -60,10 +76,6 @@
     }
   }
 
-  .sc-digi-icon-chevron-right-h svg.sc-digi-icon-chevron-right {
-    transform: rotate(180deg); /* vänder pilen åt vänster */
-  }
-
   /*HEADER */
   .sc-digi-header-navigation-item-h.sc-digi-header-navigation-item-s > a,
   .sc-digi-header-navigation-item-h .sc-digi-header-navigation-item-s > a {
@@ -75,42 +87,44 @@
     font-size: var(--digi--header-navigation-item--font-size);
   }
 
-    /* Navigation */
-    .sc-digi-header-navigation-h
-        .digi-header-navigation__inner.sc-digi-header-navigation {
-        margin-top: 2.5rem;
-        margin-right: 1rem;
-        display: flex;
-        justify-content: flex-end;
-        gap: 40px;
-        margin-bottom: 2rem;
-    }
+  /* Navigation */
+  .sc-digi-header-navigation-h
+    .digi-header-navigation__inner.sc-digi-header-navigation {
+    margin-top: 2.5rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+    margin-bottom: 2rem;
+  }
 
-    /* Navigation */
-    .sc-digi-header-navigation-item-h.sc-digi-header-navigation-item-s > a,
-    .sc-digi-header-navigation-item-h .sc-digi-header-navigation-item-s > a {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        padding: 0.5rem;
-    }
+  /* Navigation */
+  .sc-digi-header-navigation-item-h.sc-digi-header-navigation-item-s > a,
+  .sc-digi-header-navigation-item-h .sc-digi-header-navigation-item-s > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem;
+  }
 
   /* Button to jobpage */
-  .digi-link-button--medium.sc-digi-link-button-h a.sc-digi-link-button {
+  .sc-digi-button-h .digi-button.sc-digi-button {
+    background: #21217b;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-
+    border-radius: 40px;
     margin: 2rem auto;
     width: fit-content;
-
-    background: #21217b;
+    &:hover {
+      background-color: #dd387f;
+    }
   }
 
+  /* Link btn from jobpage */
   .sc-digi-icon-chevron-right-h svg.sc-digi-icon-chevron-right {
-    transform: rotate(360deg);
-    margin: 0;
+    transform: rotate(180deg); /* arrow left */
   }
 
   /* Link back to homepage */
@@ -128,58 +142,58 @@
     margin-left: 1.2rem;
   }
 
-    .sc-digi-logo {
-        display: none; /* Gömmer loggan */
-        --digi--logo--system-name-color--primary: var(--digi--water-700);
-    }
+  .sc-digi-logo {
+    display: none; /* Gömmer loggan */
+    --digi--logo--system-name-color--primary: var(--digi--water-700);
+  }
 
-    .sc-digi-header-h .digi-header__border.sc-digi-header {
-        border: none; /* Tar bort border-bottom för header */
-    }
+  .sc-digi-header-h .digi-header__border.sc-digi-header {
+    border: none; /* Tar bort border-bottom för header */
+  }
 
-    .digi-logo__system-name {
-        --digi--logo--font-size--system: var(
-            --digi--typography--heading-1--font-size--desktop
-        );
-    }
+  .digi-logo__system-name {
+    --digi--logo--font-size--system: var(
+      --digi--typography--heading-1--font-size--desktop
+    );
+  }
 
-    .sc-digi-logo-h {
-        --digi--logo--color--border--primary: none; /*Gömmer border till loggan */
-    }
+  .sc-digi-logo-h {
+    --digi--logo--color--border--primary: none; /*Gömmer border till loggan */
+  }
 
-    /* Hamburger menu */
-    .sc-digi-button-h .digi-button--variation-function.sc-digi-button {
-        background-color: #fff;
-        font-size: 1.2rem;
-    }
+  /* Hamburger menu */
+  .sc-digi-button-h .digi-button--variation-function.sc-digi-button {
+    background-color: #fff;
+    font-size: 1.2rem;
+  }
 
-    /*JOBLIST */
-    .ad-container {
-        padding: 10px;
-        font-weight: 900;
-        --FONT-WEIGHT--HEADING-3: ;
-    }
+  /*JOBLIST */
+  .ad-container {
+    padding: 10px;
+    font-weight: 900;
+    --FONT-WEIGHT--HEADING-3: ;
+  }
 
-    .ad-header a {
-        color: #dd387f;
-    }
+  .ad-header a {
+    color: #dd387f;
+  }
 
-    .sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {
-        --BACKGROUND: var(--digi--water-700);
-    }
+  .sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {
+    --BACKGROUND: var(--digi--water-700);
+  }
 }
 
 /*Fun facts */
 .fun-fact-card {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .small {
