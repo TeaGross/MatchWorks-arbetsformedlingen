@@ -8,6 +8,8 @@ type JobContext = {
     setQuery: (q: string) => void;
     page: number;
     setPage: React.Dispatch<React.SetStateAction<number>>;
+    totalResult: number;
+    setTotalResult: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const JobContext = createContext<JobContext>({
@@ -17,4 +19,6 @@ export const JobContext = createContext<JobContext>({
     setQuery: () => {},
     page: 1,
     setPage: () => {},
+    totalResult: 0,
+    setTotalResult: () => {}
 });

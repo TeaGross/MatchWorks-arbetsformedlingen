@@ -9,9 +9,11 @@ export const Layout = () => {
     const [jobs, setJobs] = useState<Job[]>([]);
     const [query, setQuery] = useState("");
     const [page, setPage] = useState(0);
+    const [totalResult, setTotalResult] = useState(0)
+
 
     return <>
-    <JobContext.Provider value={{jobs, setJobs, query, setQuery, page, setPage}}>
+    <JobContext.Provider value={{jobs, setJobs, query, setQuery, page, setPage, totalResult, setTotalResult}}>
         <Header/>
         <main><Outlet/></main>
         <Footer/>
