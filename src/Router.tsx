@@ -5,7 +5,6 @@ import { HomePage } from "./pages/HomePage";
 import { JobPresentation } from "./pages/JobPresentation";
 import { JobPage } from "./pages/JobPage";
 
-
 export const Router = createBrowserRouter([
     {
         path: "/",

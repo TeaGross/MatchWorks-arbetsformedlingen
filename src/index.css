@@ -139,3 +139,36 @@ Specificitet: (0,2,1) {
 body {
   margin: 0;
 }
+
+/*Why matchwork */
+
+.info-matchwork{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.sc-digi-info-card-multi-h .digi-info-card-multi__link.sc-digi-info-card-multi{
+  text-decoration: none;
+  color: #dd387f;
+}
+
+.sc-digi-info-card-multi-h .digi-info-card-multi--related.sc-digi-info-card-multi{
+  border-top-color: #21217b;
+}
+
+.sc-digi-info-card-multi-h{
+  --digi--info-card-multi--border: var(--digi--border-width--complementary-2) solid var(--digi--color--border--secondary);
+}
+
+.sc-digi-layout-columns-h .digi-layout-columns.sc-digi-layout-columns{
+  display:  block;
+}
+
+@media screen and (min-width: 768px) {
+  .sc-digi-layout-columns-h .digi-layout-columns.sc-digi-layout-columns{
+  display:  grid;
+}
+}
+
