@@ -2,9 +2,9 @@ import { useLocation, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import type { Job, JobDetail } from "../models/Jobs";
 import { getJobById } from "../services/JobService";
-import { Link } from "react-router";
 import {
     DigiLayoutBlock,
+    DigiLinkInternal,
     DigiLoaderSpinner,
     DigiTypography,
 } from "@digi/arbetsformedlingen-react";
@@ -59,11 +59,11 @@ export const JobPresentation = () => {
 
     return (
         <>
+            <DigiLinkInternal afHref="/JobPage">
+                Till alla jobb
+            </DigiLinkInternal>
             <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
                 <DigiTypography>
-                    <Link to={`/`} className="small">
-                        ← Till alla jobb
-                    </Link>
                     <h2 style={{ color: "#dd387f" }}>{job.headline}</h2>
                     <p>
                         <strong>Arbetsgivare:</strong> {job.employer?.name}
