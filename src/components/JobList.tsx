@@ -28,7 +28,7 @@ export const JobList = () => {
             try {
                 const jobs = await getJobs();
                 setJobs(jobs.hits ?? []);
-                setTotalResult(jobs.total.value)
+                setTotalResult(Math.min(jobs.total.value || jobs.hits.length || 0, 2000))
                 setPage(1);
             } catch (error) {
                 console.error("Error fetching jobs:", error);
@@ -40,7 +40,6 @@ export const JobList = () => {
     getData();
   }, [setJobs, setTotalResult, setPage]);
 
-  console.log(totalResult, page )
   
   return (
     <div>
