@@ -3,10 +3,12 @@ import { getJobs } from "../services/JobService";
 import {
     DigiLayoutBlock,
     DigiLayoutContainer,
+    DigiLoaderSpinner,
     DigiTypography,
 } from "@digi/arbetsformedlingen-react";
 import {
     LayoutBlockVariation,
+    LoaderSpinnerSize,
     TypographyVariation,
 } from "@digi/arbetsformedlingen";
 import { SearchForm } from "./SearchForm";
@@ -77,6 +79,7 @@ export const JobList = () => {
             ))}
           </DigiTypography>
         </DigiLayoutBlock>
+        <DigiPagination/>
       </div>
   );
 };
