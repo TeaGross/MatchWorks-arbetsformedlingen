@@ -4,12 +4,13 @@ import { getJobs } from "../services/JobService";
 import { JobContext } from "../context/Jobcontext";
 
 export const DigiPagination = () => {
-    const { setJobs, query } = useContext(JobContext);
+    const { setJobs, query, page, setPage } = useContext(JobContext);
     // const navigate = useNavigate();
     const handlePageChange = (event: CustomEvent<number>) => {
         const getData = async () => {
-            const newPage = event.detail;
-            const jobs = await getJobs(newPage, query);
+            // const setPage = event.detail;
+            setPage(event.detail);
+            const jobs = await getJobs(page, query);
             setJobs(jobs.hits ?? []);
         };
         getData();
@@ -17,11 +18,11 @@ export const DigiPagination = () => {
 
     return (
         <DigiNavigationPagination
-            afTotalPages={6}
+            afTotalPages={133}
             afInitActive-page={1}
             afCurrentResultStart={1}
             afCurrentResultEnd={15}
-            afTotalResults={1000}
+            afTotalResults={2000}
             afResultName="annonser"
             onAfOnPageChange={handlePageChange}
         />

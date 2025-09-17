@@ -30,26 +30,25 @@ const BASE = "https://jobsearch.api.jobtechdev.se";
 
 // gemensam fetch:
 export const getJobs = async (
-    page: number = 0, 
-    query: string | null = null)
-    :Promise<JobResult> => {
-        const limit: number = 15;
-         const offset = page * limit + 1;
+    page: number = 1,
+    query: string | null = null
+): Promise<JobResult> => {
+    const limit: number = 15;
+    const offset = page * (limit + 1);
 
-          const params = new URLSearchParams({
+    const params = new URLSearchParams({
         offset: String(offset),
         limit: String(limit),
-        });
+    });
 
-        if(query) {
-            params.set("q", query)
-        }
-
-        const res = await fetch(`${BASE}/search?${params.toString()}`);
-
-        return res.json();
+    if (query) {
+        params.set("q", query);
     }
- 
+
+    const res = await fetch(`${BASE}/search?${params.toString()}`);
+
+    return res.json();
+};
 
 export const getJobById = async (id: string): Promise<JobDetail> => {
     const res = await fetch(`${BASE}/ad/${id}`);

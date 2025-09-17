@@ -1,41 +1,46 @@
 import { useContext } from "react";
 import type { Job } from "../models/Jobs";
 import { DigiFormInputSearch } from "@digi/arbetsformedlingen-react";
-import { FormInputSearchVariation, FormInputType } from "@digi/arbetsformedlingen";
+import {
+    FormInputSearchVariation,
+    FormInputType,
+} from "@digi/arbetsformedlingen";
 import { getJobs } from "../services/JobService";
 import { JobContext } from "../context/Jobcontext";
 
-
 interface SearchFormProps {
-  onSearchResult: (jobs: Job[]) => void; // callback to parent JobList
+    onSearchResult: (jobs: Job[]) => void; // callback to parent JobList
 }
 
 export const SearchForm = ({ onSearchResult }: SearchFormProps) => {
-  const {query, setQuery} = useContext(JobContext);
+    const { query, setQuery, page, setPage } = useContext(JobContext);
 
-  const handleSearch = async (value: string) => {
-    setQuery(value);
-    if (!value.trim()) return;
+    const handleSearch = async (value: string) => {
+        setQuery(value);
+        setPage(1);
+        if (!value.trim()) return;
 
-     try {
-      const data = await getJobs(undefined, value);
-      onSearchResult(data.hits); // send result back to JobList
-    } catch (err) {
-      console.error(err);
-    }
-  };
+        try {
+            const data = await getJobs(page, value);
+            onSearchResult(data.hits); // send result back to JobList
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
-  return (
-    <DigiFormInputSearch
-      afLabel="Sök efter jobb eller stad"
-      afVariation={FormInputSearchVariation.MEDIUM}
-      afType={FormInputType.SEARCH}
-      afButtonText=""
-      value={query}
-      onChange={(e: React.FormEvent) => {
-        const target = e.target as HTMLInputElement;
-        handleSearch(target.value); 
-      }}
-    />
-  );
+    console.log(page);
+
+    return (
+        <DigiFormInputSearch
+            afLabel="Sök efter jobb eller stad"
+            afVariation={FormInputSearchVariation.MEDIUM}
+            afType={FormInputType.SEARCH}
+            afButtonText=""
+            value={query}
+            onChange={(e: React.FormEvent) => {
+                const target = e.target as HTMLInputElement;
+                handleSearch(target.value);
+            }}
+        />
+    );
 };
