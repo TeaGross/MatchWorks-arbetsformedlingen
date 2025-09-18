@@ -9,12 +9,11 @@ import { getJobs } from "../services/JobService";
 import { JobContext } from "../context/Jobcontext";
 
 interface SearchFormProps {
-    onSearchResult: (jobs: Job[]) => void; // callback to parent JobList
+    onSearchResult: (jobs: Job[]) => void;
 }
 
 export const SearchForm = ({ onSearchResult }: SearchFormProps) => {
-    const { query, setQuery, page, setPage, setTotalResult } =
-        useContext(JobContext);
+    const { query, setQuery, setPage, setTotalResult } = useContext(JobContext);
 
     const handleSearch = async (value: string) => {
         const q = value.trim();
@@ -25,13 +24,11 @@ export const SearchForm = ({ onSearchResult }: SearchFormProps) => {
         try {
             const data = await getJobs(1, q);
             onSearchResult(data.hits);
-            setTotalResult(data.total.value); // send result back to JobList
+            setTotalResult(data.total.value);
         } catch (err) {
             console.error(err);
         }
     };
-
-    console.log(page);
 
     return (
         <DigiFormInputSearch
