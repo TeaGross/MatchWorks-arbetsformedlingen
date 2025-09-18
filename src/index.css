@@ -2,6 +2,10 @@
 @import '@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css';
 
 :root {
+   body {
+    margin: 0;
+  }
+
   /* SearchForm */
   .sc-digi-form-input-h .digi-form-input--medium.sc-digi-form-input {
     --HEIGHT: var(--digi--form-input--height--small);
@@ -11,8 +15,8 @@
     max-width: 500px;
     margin-left: 1rem;
   }
-  
-   /* searchform btn */
+
+  /* searchform btn */
   .digi-form-input--button-variation-primary
     .digi-form-input__input-wrapper.sc-digi-form-input-s
     > [slot^='button']
@@ -32,6 +36,7 @@
     width: fit-content;
   }
 
+  /* citat in HeroSection */
   .citat {
     display: flex;
     justify-content: center;
@@ -60,6 +65,17 @@
     gap: 40px;
   }
 
+  /*HEADER */
+  .sc-digi-header-navigation-item-h.sc-digi-header-navigation-item-s > a,
+  .sc-digi-header-navigation-item-h .sc-digi-header-navigation-item-s > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    color: var(--digi--header-navigation-item--color);
+    font-family: var(--digi--header-navigation-item--font-family);
+    font-size: var(--digi--header-navigation-item--font-size);
+  }
+
   /*Line under navigation text */
   .digi-header-navigation-item-indicator.sc-digi-header-navigation-item {
     --digi--header-navigation-item-indicator--inactive-hover--color: #dd387f;
@@ -74,18 +90,7 @@
     &:hover {
       --digi--header-navigation-item-indicator--active--color: #dd387f;
     }
-  }
-
-  /*HEADER */
-  .sc-digi-header-navigation-item-h.sc-digi-header-navigation-item-s > a,
-  .sc-digi-header-navigation-item-h .sc-digi-header-navigation-item-s > a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    color: var(--digi--header-navigation-item--color);
-    font-family: var(--digi--header-navigation-item--font-family);
-    font-size: var(--digi--header-navigation-item--font-size);
-  }
+  }  
 
   /* Navigation */
   .sc-digi-header-navigation-h
@@ -107,7 +112,7 @@
     padding: 0.5rem;
   }
 
-  /* Button to jobpage */
+  /* Button from HeroSection to jobpage */
   .sc-digi-button-h .digi-button.sc-digi-button {
     background: #21217b;
     display: flex;
@@ -122,13 +127,10 @@
     }
   }
 
-  .sc-digi-icon-chevron-right-h svg.sc-digi-icon-chevron-right, .sc-digi-icon-chevron-left-h svg.sc-digi-icon-chevron-left{
+  /* Arrow from design AF design */
+  .sc-digi-icon-chevron-right-h svg.sc-digi-icon-chevron-right,
+  .sc-digi-icon-chevron-left-h svg.sc-digi-icon-chevron-left {
     display: none;
-  }
-
-  /* Link btn from jobpage */
-  .sc-digi-icon-chevron-right-h svg.sc-digi-icon-chevron-right {
-    transform: rotate(180deg); /* arrow left */
   }
 
   /* Link back to homepage */
@@ -140,19 +142,22 @@
     }
   }
 
+  /* Link back to JobPage */
   .sc-digi-link-s > a [class*='digi-icon'],
   .sc-digi-link-s > a [slot^='icon'] {
     color: #21217b;
     margin-left: 2rem;
   }
 
+  /* Hide logo from AF design */
   .sc-digi-logo {
-    display: none; /* Gömmer loggan */
+    display: none; 
     --digi--logo--system-name-color--primary: var(--digi--water-700);
   }
 
+  /* Remove border bottom for header */
   .sc-digi-header-h .digi-header__border.sc-digi-header {
-    border: none; /* Tar bort border-bottom för header */
+    border: none; 
   }
 
   .digi-logo__system-name {
@@ -161,8 +166,9 @@
     );
   }
 
+  /*Hide another logo from AF design */
   .sc-digi-logo-h {
-    --digi--logo--color--border--primary: none; /*Gömmer border till loggan */
+    --digi--logo--color--border--primary: none; 
   }
 
   /* Hamburger menu */
@@ -185,56 +191,48 @@
   .sc-digi-layout-block-h .digi-layout-block--profile.sc-digi-layout-block {
     --BACKGROUND: var(--digi--water-700);
   }
-}
 
-/*Fun facts */
-.fun-fact-card {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+  /*Fun facts */
+  .fun-fact-card {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-body {
-  margin: 0;
-}
+  /*Why matchworks */
+  .info-matchwork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+  }
 
-.small {
-  font-size: 1.2rem;
-  color: var(--muted);
-}
+  .sc-digi-info-card-multi-h
+    .digi-info-card-multi__link.sc-digi-info-card-multi {
+    text-decoration: none;
+    color: #dd387f;
+  }
 
-/*Why matchwork */
+  .sc-digi-info-card-multi-h
+    .digi-info-card-multi--related.sc-digi-info-card-multi {
+    border-top-color: #21217b;
+  }
 
-.info-matchwork {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 20px;
-}
+  .sc-digi-info-card-multi-h {
+    --digi--info-card-multi--border: var(--digi--border-width--complementary-2)
+      solid var(--digi--color--border--secondary);
+  }
 
-.sc-digi-info-card-multi-h .digi-info-card-multi__link.sc-digi-info-card-multi {
-  text-decoration: none;
-  color: #dd387f;
-}
-
-.sc-digi-info-card-multi-h
-  .digi-info-card-multi--related.sc-digi-info-card-multi {
-  border-top-color: #21217b;
-}
-
-.sc-digi-info-card-multi-h {
-  --digi--info-card-multi--border: var(--digi--border-width--complementary-2)
-    solid var(--digi--color--border--secondary);
-}
-
-.sc-digi-layout-columns-h .digi-layout-columns.sc-digi-layout-columns {
-  display: block;
-}
-
-@media screen and (min-width: 768px) {
   .sc-digi-layout-columns-h .digi-layout-columns.sc-digi-layout-columns {
-    display: grid;
+    display: block;
+  }
+
+  /*Responsive for funfacts and why MatchWorks */
+  @media screen and (min-width: 768px) {
+    .sc-digi-layout-columns-h .digi-layout-columns.sc-digi-layout-columns {
+      display: grid;
+    }
   }
 }
