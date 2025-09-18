@@ -12,6 +12,7 @@ import {
     LayoutBlockVariation,
     LoaderSpinnerSize,
 } from "@digi/arbetsformedlingen";
+import { formatDate } from "../helpers/dateHelper";
 
 export const JobPresentation = () => {
     const { state } = useLocation() as { state?: { job?: Job } };
@@ -76,11 +77,11 @@ export const JobPresentation = () => {
                         <strong>Region:</strong> {job.workplace_address?.region}
                     </p>
                     <p>
-                        <strong>Publicerad:</strong> {job.publication_date}
+                        <strong>Publicerad:</strong> {formatDate(job.publication_date) ?? "Datum saknas" }
                     </p>
                     <p>
                         <strong>Sista ansökningsdag:</strong>{" "}
-                        {job.application_deadline}
+                        {formatDate(job.application_deadline) ?? "Datum saknas"}
                     </p>
                     <p>
                         <strong>Beskrivning:</strong>
