@@ -8,7 +8,7 @@ export const JobPage = ()=> {
 	afHref="/"
 	
 >
-	Tillbaka till Startsidan
+	← Tillbaka till Startsidan
 </DigiLinkInternal>
   <JobList />
   </>

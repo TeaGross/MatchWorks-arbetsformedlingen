@@ -60,7 +60,7 @@ export const JobPresentation = () => {
     return (
         <>
             <DigiLinkInternal afHref="/JobPage">
-                Till alla jobb
+                ←Till alla jobb
             </DigiLinkInternal>
             <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
                 <DigiTypography>
