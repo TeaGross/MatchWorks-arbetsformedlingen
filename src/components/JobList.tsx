@@ -45,7 +45,10 @@ export const JobList = () => {
 
     return (
         <div>
-            <div>
+
+            <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
+                <SearchForm onSearchResult={setJobs} />
+                <div>
                 {loading ? (
                     <div
                         style={{
@@ -65,9 +68,6 @@ export const JobList = () => {
                     "Inga jobb hittades."
                 ) : null}
             </div>
-
-            <DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
-                <SearchForm onSearchResult={setJobs} />
                 <DigiTypography afVariation={TypographyVariation.SMALL}>
                     {jobs?.map((job) => (
                         <DigiLayoutContainer

@@ -1,15 +1,13 @@
-import { DigiLinkInternal } from "@digi/arbetsformedlingen-react"
-import { JobList } from "../components/JobList"
+import { DigiLinkInternal } from '@digi/arbetsformedlingen-react';
+import { JobList } from '../components/JobList';
 
-
-export const JobPage = ()=> {
-  return<>
-  <DigiLinkInternal
-	afHref="/"
-	
->
-	← Tillbaka till Startsidan
-</DigiLinkInternal>
-  <JobList />
-  </>
-}
+export const JobPage = () => {
+  return (
+    <>
+      <DigiLinkInternal afHref="/">
+      ← Tillbaka till Startsidan
+      </DigiLinkInternal>
+      <JobList />
+    </>
+  );
+};
