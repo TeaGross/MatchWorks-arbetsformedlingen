@@ -6,7 +6,7 @@ export const WhyMatchWork = () => {
         <DigiLayoutBlock>
             <DigiTypography afVariation={TypographyVariation.SMALL}>
                 <div className="info-matchwork">
-                    <h2>Varför MatchWork?</h2>
+                    <h2>Varför MatchWorks?</h2>
                     <p>Våra användare söker efter sitt drömjobb och vi gör allt vi kan för att hjälpa dem att hitta det.</p>
                 </div>
                     <DigiInfoCardMultiContainer 
@@ -31,7 +31,7 @@ export const WhyMatchWork = () => {
                             afHeadingLevel={InfoCardMultiHeadingLevel.H2}
                             afType={InfoCardMultiType.RELATED}
                             >
-                           <p> MatchWork utvecklas ständigt för att göra ditt jobbsök ännu enklare och mer träffsäkert.</p>
+                           <p> MatchWorks utvecklas ständigt för att göra ditt jobbsök ännu enklare och mer träffsäkert.</p>
 
                         </DigiInfoCardMulti>
                     </DigiInfoCardMultiContainer>

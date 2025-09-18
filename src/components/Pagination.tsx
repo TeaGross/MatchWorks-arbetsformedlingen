@@ -4,7 +4,8 @@ import { getJobs } from "../services/JobService";
 import { JobContext } from "../context/Jobcontext";
 
 export const DigiPagination = () => {
-    const {setJobs, query, page, setPage, totalResult, setTotalResult } = useContext(JobContext);
+    const { setJobs, query, page, setPage, totalResult, setTotalResult } =
+        useContext(JobContext);
     const limit = 15;
 
     // const navigate = useNavigate();
@@ -14,7 +15,9 @@ export const DigiPagination = () => {
         const getData = async () => {
             const data = await getJobs(newPage, query);
             setJobs(data.hits ?? []);
-            setTotalResult(Math.min(data.total.value || data.hits.length || 0, 2000));
+            setTotalResult(
+                Math.min(data.total.value || data.hits.length || 0, 2000)
+            );
         };
         getData();
     };

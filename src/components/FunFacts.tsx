@@ -10,7 +10,7 @@ export const FunFacts  = () => {
         <DigiTypography afVariation={TypographyVariation.LARGE}>
             <DigiLayoutContainer>
 
-            <h2>WorkMatch: Upptäck karriärmöjligheter i Sverige!</h2>
+            <h2>MatchWorks: Upptäck karriärmöjligheter i Sverige!</h2>
             <DigiLayoutColumns 
             afElement={LayoutColumnsElement.DIV}
             afVariation={isMobile ? LayoutColumnsVariation.ONE : LayoutColumnsVariation.THREE}
