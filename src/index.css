@@ -141,6 +141,12 @@
       color: #dd387f;
     }
   }
+  
+  /* Pagination button */
+  .sc-digi-button-h .digi-button.sc-digi-button[aria-current="page"] {
+        background-color: white;
+        color: #21217b;
+    }
 
   /* Link back to JobPage */
   .sc-digi-link-s > a [class*='digi-icon'],
