@@ -1,6 +1,7 @@
 # 📌 Rättningsrapport – fed24d-case-af-jobtech-group-1-1
 
 ## 🎯 Uppgiftens Krav:
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/6VsM7MHT)
 # Skapa en egen Platsbanken för ert drömscenario 
 
 Dokumentation om Arbetsförmedlingens öppna data finns på https://jobtechdev.se. All öppna data från arbetsförmedlingen och andra offentliga organisationen går även att hitta direkt på dataportal.se. 
@@ -8,17 +9,17 @@ I detta dokument ges två förslag på användningsfall som vi tror är lämplig
 
 Läs först igenom kom-igång hjälpen 
 
--  [Övergripande dokumentation API:etJobSearch](https://data.arbetsformedlingen.se/data/platsannonser/)
--  [Kom-igång guide](https://gitlab.com/arbetsformedlingen/job-ads/jobsearch/jobsearch-api/-/blob/main/docs/GettingStartedJobSearchSE.md)
+-  [Övergripande dokumentation API:etJobSearch](https://jobtechdev.se/sv/components/jobsearch)
+-  [Kom-igång guide](https://gitlab.com/arbetsformedlingen/education/education-api/-/blob/main/GETTING_STARTED.md)
 
 ## Prova att utforska datan med vår interaktiva tjänst 
 
-Görs genom att öppna Swagger-sidan för API:et (för att enkelt testa olika endpoints i API:et och läsa dokumentation för respektive endpoint): [Search job ads (jobtechdev.se)](https://jobsearch.api.jobtechdev.se/)
+Görs genom att öppna Swagger-sidan för API:et (för att enkelt testa olika endpoints i API:et och läsa dokumentation för respektive endpoint): Search job ads (jobtechdev.se) 
 
 ## Uppgift 
 
-Använd endpoint **/search** för att söka bland befintliga annonser. 
-Det går även bra att använda historiska annonser om ni vill jämföra aktuella annonser med hur det har sett ut tidigare. Detta api finns här: [Historical job ads (jobtechdev.se)](https://historical.api.jobtechdev.se/)
+Använd endpoint https://jobsearch.api.jobtechdev.se/ för att använda/söka bland befintliga annonser. 
+Det går även bra att använda historiska annonser om ni vill jämföra aktuella annonser med hur det har sett ut tidigare. Detta api finns här: Historical job ads (jobtechdev.se)
 
 Om möjligt, använd en grafisk presentation av era resultat genom t.ex. stapeldiagram eller linjegrafer.
 
@@ -38,28 +39,27 @@ Er slutprodukt ska ej innehålla Arbetsförmedlingens logga eller färger. Anpas
 - Styled components (som drar nytta av designsystemet) 
 - Grafisk presentation av datat 
 - Användning av custom hook där det finns möjlighet
-- Använd endpoint /complete för att lägga till autocomplete-funktion och få förslag på begrepp vid fritextsökning
 
 ## 🔍 ESLint-varningar:
 - C:\Work\AssignmentCorrector\backend\repos\fed24d-case-af-jobtech-group-1-1\src\context\Jobcontext.ts - no-unused-vars - 'q' is defined but never used.
 
 ## 🏆 **Betyg: G**
-📌 **Motivering:** Uppgiften uppfyller G-kraven: data hämtas strukturerat via en tjänst (fetch i services/JobService), React‑koncept används (Context, state, routing, useEffect), och designsystemet används för presentation. Logotypen är dold och färgerna är anpassade, vilket följer uppgiftens riktlinjer. Paginering och detaljsida för annons fungerar i koden, och grundläggande fel- och laddningshantering finns på plats.
+📌 **Motivering:** Uppgiften uppfyller G‑kraven: data hämtas strukturerat via en tjänst (fetch i services/JobService), React‑koncept används (context för delad state, routing med RouterProvider och createBrowserRouter, state/effekter), och designsystemet används konsekvent för presentation. Ni har dessutom tänkt på att inte visa AF:s logotyp och har satt en egen färgpalett.
 
 💡 **Förbättringsförslag:**  
-- Routing: Inkonsekvent versalisering i rutter/URL:er. Ni definierar path "/jobPage" men länkar/navigerar till "/JobPage" på flera ställen (Header, HomePage, JobPresentation). React Router är skiftlägeskänsligt — detta ger brutna länkar. Standardisera till en och samma casing överallt och använd Link/DigiLinkInternal konsekvent istället för mix av <a href> och Link.
-- Importer: Ni importerar RouterProvider, Link, createBrowserRouter, useNavigate m.fl. från "react-router". I en webapp ska dessa komma från "react-router-dom". Byt till react-router-dom för att undvika framtida kompatibilitetsproblem.
-- Error handling: I JobList sätts aldrig error i catch-blocket (ni loggar bara). Sätt setError("Kunde inte hämta jobb.") så att användaren ser felmeddelandet.
-- Sökprestanda: Sök sker på varje tangentnedslag. Lägg till debounce (t.ex. 300–500 ms) och/eller sök först när användaren trycker Enter eller när längden > 2 tecken för att minska onödiga API-anrop. Alternativt använd endpointen /complete för autocomplete (nice-to-have enligt uppgiften).
-- Dubbelhämtning: Vid sök uppdateras listan både via SearchForm (onSearchResult) och via useEffect i JobList när query ändras. Samla hämtlogiken i ett ställe (eller i en custom hook) för att undvika race conditions och redundant nätverkstrafik.
-- Custom hook: Skapa en useJobs(query, page) som kapslar in hämtning, laddning, fel och totalResult. Det förenklar komponenterna och minskar duplicerad logik (extra bonus enligt kravspecen).
-- Resurser/bilder: I FunFacts används afSrc="src/assets/...". I Vite bör du importera bilderna och använda den importerade variabeln eller lägga dem i public/ och referera med "/..." för att fungera i produktion.
-- Header state: Ni använder globalt location.pathname för "current" i menyn. Använd useLocation() från react-router-dom så blir det reaktivt och testbart.
-- UI/UX: Tomt knapp-label i sök (afButtonText=""). Antingen dölj knappen helt om komponenten stödjer det, eller ge begriplig label. Undvik även döda länkar som href="#" i Footer.
-- Fel- och aborthantering: Lägg till AbortController vid sök/paginering för att avbryta pågående anrop när query eller sida ändras. Visa ett tydligare felmeddelande i UI när API-svar misslyckas.
-- Bonusmöjligheter: 
-  - Lägg till /complete för autocomplete-förslag.
-  - Visualisera data (t.ex. stapeldiagram på ort/yrke över träffar) för att uppfylla den grafiska presentationen (nice-to-have).
+- Routing: Routen är definierad som "/jobPage" men ni navigerar/länkar till "/JobPage" (HomePage och Header). React Router är case‑känsligt, vilket ger 404. Välj en konsekvent lowercase path och uppdatera länkar och navigate.
+- Importer från React Router: Använd "react-router-dom" för webben (Link, useNavigate, RouterProvider, createBrowserRouter). Att importera från "react-router" kan leda till fel i vissa versioner/miljöer.
+- Felhantering i JobList: Ni har error‑state men sätter aldrig setError i catch. Visa användarvänligt felmeddelande och erbjud möjlighet att försöka igen.
+- Sökprestanda: handleSearch triggas på varje tangenttryck och gör API‑anrop. Lägg till debounce (t.ex. 300–500 ms) eller sök på submit. Alternativt använd useDeferredValue.
+- Pagination‑loading: Visa/indikera laddning när sida byts (t.ex. disable pagination och lista kort under hämtning) så att användaren får feedback.
+- Typning/namngivning: I modeller finns både description och AdDescription (olika casing). Samordna fältnamn efter API:t (description.text) och ta bort oanvända/inkorrekta typer.
+- React‑länkar: Använd Link för intern navigering även för "Hem" i Header (undvik full page reload med <a href="/">). Använd useLocation i stället för global location för aktiv nav‑state.
+- Props till React‑wrappers: För Digi React‑komponenter ska ofta camelCase‑props användas (t.ex. afVerticalPadding istället för "af-vertical-padding"). Säkerställ att props actually mappas.
+- Tillgänglighet: Ersätt alt‑texter som "Hej och hå" med beskrivande alt‑texter. Sätt aria‑current på aktiv nav‑länk via designsystemet/props eller via useLocation.
+- CSS & design: Ni override:ar många interna selectors i designsystemet. Försök använda exponerade CSS‑variabler/tokens i första hand och minimera djupa selektorer för bättre robusthet. Säkerställ att inga AF‑färger/loggor läcker igenom i fler vyer/komponenter.
+- Struktur/återanvändbarhet: Skapa gärna en custom hook (useJobs/usePagination) för att kapsla in fetch, query, page och totalResult. Alternativt använd React Query för cache och fel/laddningshantering.
+- Bonus/Grafik: För VG/extra – lägg till en grafisk presentation (t.ex. stapeldiagram över antal annonser per region/yrke) baserat på sökresultatet.
+
 
 ## 👥 Gruppbidrag
 
