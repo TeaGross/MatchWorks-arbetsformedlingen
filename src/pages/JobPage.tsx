@@ -1,12 +1,12 @@
-import { DigiLinkInternal } from '@digi/arbetsformedlingen-react';
 import { JobList } from '../components/JobList';
+import { Link } from 'react-router';
 
 export const JobPage = () => {
   return (
     <>
-      <DigiLinkInternal afHref="/">
+      <Link to="/">
       ← Tillbaka till Startsidan
-      </DigiLinkInternal>
+      </Link>
       <JobList />
     </>
   );
