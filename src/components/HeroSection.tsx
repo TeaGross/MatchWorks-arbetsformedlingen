@@ -23,7 +23,7 @@ export const HeroSection = () => {
           afType={QuoteType.DEFAULT}
           afVariation={QuoteVariation.SECONDARY}
           afImagePosition={QuoteImagePosition.LEFT}
-          afImageSrc="public/Profil-Business-Manager.jpg"
+          afImageSrc="/Profil-Business-Manager.jpg"
           afImageAlt="Leende ung kvinna på kontoret"
           afQuoteAuthorName="Sofia Larsson"
           afQuoteAuthorTitle="Frontend Developer på BrightTech"
