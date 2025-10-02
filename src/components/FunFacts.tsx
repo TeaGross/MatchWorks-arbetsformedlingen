@@ -19,7 +19,7 @@ export const FunFacts  = () => {
                     <DigiMediaImage
                      afUnlazy
                      afWidth="200"
-                     afSrc="/sweden-icon.png"
+                     afSrc={`${import.meta.env.BASE_URL}sweden-icon.png`}
                      afAlt="En ikon som föreställer Sverige"></DigiMediaImage>
                     <p>Sverige har en av världens högsta sysselsättningsgrader, över 80 % av befolkningen i arbetsför ålder jobbar.</p>
                 </div>
@@ -27,7 +27,7 @@ export const FunFacts  = () => {
                     <DigiMediaImage
                      afUnlazy
                      afWidth="200"
-                     afSrc="/match-logo.png"
+                     afSrc={`${import.meta.env.BASE_URL}match-logo.png`}
                      afAlt="En  ikon som föreställer en väska"></DigiMediaImage>
                     <p>Ett bra CV är som en första dejt, du får bara en chans att göra ett bra första intryck.</p>
                 </div>
@@ -35,7 +35,7 @@ export const FunFacts  = () => {
                      <DigiMediaImage
                      afUnlazy
                      afWidth="200"
-                     afSrc="/recruiter-icon.png"
+                     afSrc={`${import.meta.env.BASE_URL}recruiter-icon.png`}
                      afAlt="En ikon som föreställer en rekryterare"></DigiMediaImage>
                     <p>3 av 5 rekryterare granskar din LinkedIn-profil noggrant innan de faktiskt ringer upp.</p>
                 </div>
