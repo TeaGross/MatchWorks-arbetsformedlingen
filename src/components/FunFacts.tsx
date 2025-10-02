@@ -19,24 +19,24 @@ export const FunFacts  = () => {
                     <DigiMediaImage
                      afUnlazy
                      afWidth="200"
-                     afSrc="src/assets/sweden-icon.png"
-                     afAlt="Hej och hå"></DigiMediaImage>
+                     afSrc="/sweden-icon.png"
+                     afAlt="En ikon som föreställer Sverige"></DigiMediaImage>
                     <p>Sverige har en av världens högsta sysselsättningsgrader, över 80 % av befolkningen i arbetsför ålder jobbar.</p>
                 </div>
                 <div className="fun-fact-card">
                     <DigiMediaImage
                      afUnlazy
                      afWidth="200"
-                     afSrc="src/assets/match-logo.png"
-                     afAlt="Hej och hå"></DigiMediaImage>
+                     afSrc="/match-logo.png"
+                     afAlt="En  ikon som föreställer en väska"></DigiMediaImage>
                     <p>Ett bra CV är som en första dejt, du får bara en chans att göra ett bra första intryck.</p>
                 </div>
                 <div className="fun-fact-card">
                      <DigiMediaImage
                      afUnlazy
                      afWidth="200"
-                     afSrc="src/assets/recruiter-icon.png"
-                     afAlt="Hej och hå"></DigiMediaImage>
+                     afSrc="/recruiter-icon.png"
+                     afAlt="En ikon som föreställer en rekryterare"></DigiMediaImage>
                     <p>3 av 5 rekryterare granskar din LinkedIn-profil noggrant innan de faktiskt ringer upp.</p>
                 </div>
 
