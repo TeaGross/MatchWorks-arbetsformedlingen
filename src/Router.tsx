@@ -26,4 +26,6 @@ export const Router = createBrowserRouter([
         ]
 
     }
-])
+], {
+basename: import.meta.env.DEV ? "" : "MatchWorks-arbetsformedlingen/",
+})
