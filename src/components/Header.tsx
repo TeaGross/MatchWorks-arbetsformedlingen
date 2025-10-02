@@ -17,7 +17,7 @@ export const Header = () => {
                     <DigiHeaderNavigationItem
                         afCurrentPage={location.pathname === "/"}
                     >
-                        <a href="/">Hem</a>
+                        <Link to="/">Hem</Link>
                     </DigiHeaderNavigationItem>
                     <DigiHeaderNavigationItem
                         afCurrentPage={location.pathname === "/JobPage"}
@@ -28,12 +28,12 @@ export const Header = () => {
                         <a href="#footer">Kontakt</a>
                     </DigiHeaderNavigationItem>
                 </DigiHeaderNavigation>
-                <a
+                <Link
                     slot="header-logo"
                     className="logo"
                     aria-label="Match startsida"
-                    href="/"
-                ></a>
+                    to="/"
+                ></Link>
             </DigiHeader>
         </>
     );

@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router";
+import { Link, useLocation, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import type { Job, JobDetail } from "../models/Jobs";
 import { getJobById } from "../services/JobService";
@@ -97,8 +97,8 @@ export const JobPresentation = () => {
                     </div>
                     {job.webpage_url && (
                         <p style={{ marginBottom: "2rem" }}>
-                            <a
-                                href={job.webpage_url}
+                            <Link
+                                to={job.webpage_url}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
@@ -109,7 +109,7 @@ export const JobPresentation = () => {
                                 }}
                             >
                                 Läs mer / Ansök här
-                            </a>
+                            </Link>
                         </p>
                     )}
                 </DigiTypography>
